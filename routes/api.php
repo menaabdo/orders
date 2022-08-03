@@ -3,7 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\additems;
+use App\Http\Controllers\OrderController;
 /*
+
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
@@ -22,3 +24,7 @@ Route::get('getitems',[additems::class, 'getallitemes']);
 Route::get('getproducts',[additems::class, 'getallproducts']);
 Route::post('delete',[additems::class, 'deleteitem'])  ;
 
+/////////////////////////////////orders//////////////////////////
+Route::post('addorder',[OrderController::class, 'addorder']);
+Route::get('orders',[OrderController::class, 'orders']);
+Route::get('detailes/{id}',[OrderController::class, 'detailes']);
